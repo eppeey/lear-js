@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .calc{
+        width: 400px;
+        height: 600px;
+        margin: auto;
+        background-color: rgb(255, 197, 110);
+        border-radius: 40px;
+       }
+       #inp{
+        width: 80%;
+       
+        height: 60px;
+       margin: 2rem 2rem;
+        border: none;
+        border-radius: 20px;
+       }
+       .btn{
+        width: 50px;
+        height: 50px;
+        margin-left: 37px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 30px;
+        background-color: black;
+        color: aliceblue;
+       }
+       .btn:hover{
+        background-color: rgb(255, 250, 209);
+        color: black;
+       }
+       .pp{
+          background-color: purple;
+          border-radius: 10px;
+          color: aliceblue
+          
+       }
+    </style>
+</head>
+<body>
+    <div class="main">
+       <div class="calc">
+          <div class="output">
+               <input type="text" id="inp">
+          </div>
+
+          <div class="btns">
+            <button class="btn" onclick="clearDisplay()">CLR</button>
+              <div class="row">
+                   <button class="btn" onclick="clicko(7)">7</button>
+                   <button class="btn" onclick="clicko(8)">8</button>
+                   <button class="btn" onclick="clicko(9)">9</button>
+                   <button class="btn pp" onclick="clicko('/')">/</button>
+              </div>
+              <div class="row">
+                <button class="btn" onclick="clicko(4)">4</button>
+                <button class="btn" onclick="clicko(5)">5</button>
+                <button class="btn" onclick="clicko(6)">6</button>
+                <button class="btn pp" onclick="clicko('*')">x</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="clicko(1)">1</button>
+                <button class="btn" onclick="clicko(2)">2</button>
+                <button class="btn" onclick="clicko(3)">3</button>
+                <button class="btn pp" onclick="clicko('-')">-</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="clicko('.')">.</button>
+                <button class="btn" onclick="clicko(0)">0</button>
+                <button class="btn" onclick="equalClick()">=</button>
+                <button class="btn pp" onclick="clicko('+')">+</button>
+            </div>
+
+          </div>
+       </div>
+    </div>
+
+
+
+    <script>
+          function clicko(val)
+          {
+            document.getElementById("inp").value+=val;
+          }
+
+          function clearDisplay()
+          {
+            document.getElementById("inp").value=" ";
+          }
+
+          function equalClick()
+          {
+               var text=document.getElementById("inp").value;
+               var results=eval(text);
+               document.getElementById('inp').value=results;
+          }
+    
+    </script>
+</body>
+</html>
